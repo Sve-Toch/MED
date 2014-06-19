@@ -42,6 +42,7 @@ public class ServiceLayer {
     }
     public static void putResult(String galoba, String recomm)
     {
+        if (!galoba.isEmpty()&&!recomm.isEmpty()){
         Visit visit = new Visit(); 
         visit.setPolis(patient.getPolis());
         visit.setGaloba(galoba);
@@ -56,6 +57,9 @@ public class ServiceLayer {
             JOptionPane.showMessageDialog(new JFrame(), "Ошибка","Ошибка", JOptionPane.ERROR_MESSAGE);
         }
         }
+    else {
+            JOptionPane.showMessageDialog(new JFrame(), "Вы не заполнили все поля","Ошибка.", JOptionPane.ERROR_MESSAGE);
+        }}
         
     
 }
