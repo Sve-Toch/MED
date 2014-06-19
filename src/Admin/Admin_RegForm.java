@@ -16,13 +16,17 @@ import javax.swing.JOptionPane;
  * @author user
  */
 public class Admin_RegForm extends javax.swing.JFrame {
-
+private String polis;
     /**
      * Creates new form Admin_RegForm
      */
     public Admin_RegForm() {
         initComponents();
         groupButton();
+    }
+    public void setPolis(String polis)
+    {
+        this.polis=polis;
     }
 
     /**
@@ -47,7 +51,6 @@ public class Admin_RegForm extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
@@ -56,6 +59,9 @@ public class Admin_RegForm extends javax.swing.JFrame {
         panel1 = new java.awt.Panel();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton1 = new javax.swing.JRadioButton();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,6 +126,13 @@ public class Admin_RegForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jTextField4.setToolTipText("");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -149,18 +162,23 @@ public class Admin_RegForm extends javax.swing.JFrame {
                                 .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField1)
                             .addComponent(jTextField8)
-                            .addGroup(layout.createSequentialGroup()
+                            .addComponent(jTextField2)
+                            .addComponent(jTextField3)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3))))
+                                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(25, 25, 25))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -199,7 +217,10 @@ public class Admin_RegForm extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
@@ -219,7 +240,7 @@ public class Admin_RegForm extends javax.swing.JFrame {
                     .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -236,30 +257,32 @@ bg1.add(jRadioButton2);
 }
 public void ypsMassage(String text)
 {
-    JOptionPane.showMessageDialog(new JFrame(), "Вы не ввели неверные данные"+text, "Ошибка",JOptionPane.ERROR_MESSAGE); 
+    JOptionPane.showMessageDialog(new JFrame(), "Вы ввели неверные данные"+text, "Ошибка",JOptionPane.ERROR_MESSAGE); 
 }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        boolean flag=true;
        String surname = jTextField1.getText();
-       if (surname.isEmpty()){ypsMassage("Фамилия."); flag=false;}
+       if (surname.isEmpty()){ypsMassage(" Фамилия."); flag=false;}
        String name = jTextField2.getText();
-       if (name.isEmpty()){ypsMassage("Име."); flag=false;}
+       if (name.isEmpty()){ypsMassage(" Име."); flag=false;}
        String secondname = jTextField3.getText();
-       if (secondname.isEmpty()){ypsMassage("Отчество"); flag=false;}
+       if (secondname.isEmpty()){ypsMassage(" Отчество"); flag=false;}
        boolean gender=false;
- if(jRadioButton1.isSelected()){gender=true;}else{if (jRadioButton2.isSelected()){gender=false;} else {ypsMassage("Пол."); flag=false;}}
-       String birthDay = jTextField3.getText();
-       if (birthDay==null){ypsMassage("День Рождения."); flag=false;}
-       String polis = jTextField3.getText();
-     //  if (polis.length()!=16){ypsMassage("Полис."); flag=false;}
-       String adress = jTextField3.getText();
-       if (adress==null){ypsMassage("Адрес."); flag=false;}
-       String phone = jTextField3.getText();
-       if (phone==null){ypsMassage("Телефон."); flag=false;}
-       
-         
+      if(jRadioButton1.isSelected()){gender=true;}else{if (jRadioButton2.isSelected()){gender=false;} else {ypsMassage(" Пол."); flag=false;}}
+       String birthDay = jTextField4.getText();
+       String birthMonth= jTextField9.getText();
+       String birthYear = jTextField10.getText();
+       String birthDate=birthYear+"-"+birthMonth+"-"+birthDay;
+       if (birthDay.isEmpty()||birthMonth.isEmpty()||birthYear.isEmpty()||birthYear.length()!=4||birthMonth.length()!=2||birthDay.length()!=2){ypsMassage(" День Рождения."); flag=false;}
+       String polis = jTextField6.getText();
+      if (polis.length()!=16){ypsMassage(" Полис."); flag=false;}
+       if(Admin.BL.Patient.search(polis)){ypsMassage(" Полис уже есть."); flag=false;}
+       String adress = jTextField7.getText();
+       if (adress.isEmpty()){ypsMassage(" Адрес."); flag=false;}
+       String phone = jTextField8.getText();
+       if (phone.isEmpty()){ypsMassage(" Телефон."); flag=false;}       
 
-           if (flag){ PatientRegistr.setRegistr(this,surname,name,secondname,gender,birthDay,polis,adress,phone);}
+           if (flag){ PatientRegistr.setRegistr(this,surname,name,secondname,gender,birthDate,polis,adress,phone);}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -269,6 +292,10 @@ public void ypsMassage(String text)
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,12 +339,14 @@ public void ypsMassage(String text)
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;

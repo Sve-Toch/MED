@@ -91,7 +91,8 @@ public class Admin_search extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-boolean flag =Admin.BL.Patient.search(jTextField1.getText());
+String polis= jTextField1.getText();
+        boolean flag =Admin.BL.Patient.search(polis);
       if(flag){
           setVisible(false);
           Admin_panel ap =new Admin_panel();
@@ -104,7 +105,7 @@ boolean flag =Admin.BL.Patient.search(jTextField1.getText());
     JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
     options, "Регистрация" );
  switch (n){
-     case JOptionPane.YES_OPTION: {Admin_RegForm ar=new Admin_RegForm(); setVisible(false); ar.setVisible(true);}
+     case JOptionPane.YES_OPTION: {Admin_RegForm ar=new Admin_RegForm();ar.setPolis(polis); setVisible(false); ar.setVisible(true);}
      case JOptionPane.NO_OPTION: break;
  }
       }

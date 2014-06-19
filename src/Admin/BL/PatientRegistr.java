@@ -7,6 +7,7 @@
 package Admin.BL;
 
 import Admin.Admin_RegForm;
+import Admin.Admin_panel;
 import Admin.BD.PatientGetWay;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -26,13 +27,13 @@ public class PatientRegistr {
 
         try {
             int res =PatientGetWay.putPatient(patient);
-            if (res >0)
-        {JOptionPane.showMessageDialog(new JFrame(), "Вы не ввели неверные данные", "Ошибка",JOptionPane.ERROR_MESSAGE);}
+            if (res <=0)
+        {JOptionPane.showMessageDialog(new JFrame(), "Вы ввели неверные данные", "Ошибка",JOptionPane.ERROR_MESSAGE);}
             else {regForm.dispose();
-            Admin_RegForm ar=new Admin_RegForm(); ar.setVisible(true);
+            Admin_panel ar=new Admin_panel(); ar.setVisible(true);
             }
         } catch (SQLException ex) {
-             JOptionPane.showMessageDialog(new JFrame(), "Вы не ввели неверные данные", "Ошибка",JOptionPane.ERROR_MESSAGE);
+             JOptionPane.showMessageDialog(new JFrame(), "Вы ввели неверные данные", "Ошибка",JOptionPane.ERROR_MESSAGE);
         }
         
     }

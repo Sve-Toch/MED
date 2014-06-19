@@ -38,7 +38,12 @@ public class Patient {
     {return address;}
         public static String getPhone()
     {return phone;}
-         public static String getGender()
+   public static String getGender()
+    {  if (gender==true)
+    {return "1";}
+    else {return "0";}
+    }
+   public static String getGenderStr()
     {if (gender==true)
     {return "Male";}
     else {return "Famale";}

@@ -39,8 +39,10 @@ public class PatientGetWay {
     {
          Connection conn=  DataBase.getInstance();
          Statement st =conn.createStatement();
-         String statement = "Insert INTO med.Patient (Name,Secondname,Surname,Polis,BirthDay,Address,Phone, Gender)  VALUES ('"+patient.getName()+"','"+patient.getSecondName()+"','"+patient.getSurname()+"','"+patient.getPolis()+"','"+patient.getBirthDay()+"','"+patient.getAddress()+"','"+patient.getPhone()+"','"+patient.getGender()+"')";
-        int rs=st.executeUpdate(statement);
+     
+         String statement = "Insert INTO med.Patient (Name,Secondname,Surname,Polis,BirthDay,Address,Phone, Gender)  VALUES ('"+patient.getName()+"','"+patient.getSecondName()+"','"+patient.getSurname()+"','"+patient.getPolis()+"','"+patient.getBirthDay()+"','"+patient.getAddress()+"','"+patient.getPhone()+"',"+patient.getGender()+")";
+        System.out.println(statement);
+         int rs=st.executeUpdate(statement);
         return rs;
     }
     
