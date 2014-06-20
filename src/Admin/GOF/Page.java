@@ -10,6 +10,6 @@ package Admin.GOF;
  *
  * @author Надежда
  */
-public interface Page {
-    public abstract PageCreator factoryMethod();
+ abstract class Page extends javax.swing.JFrame {
+ 
 }
