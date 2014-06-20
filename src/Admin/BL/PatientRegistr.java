@@ -20,6 +20,10 @@ import javax.swing.JOptionPane;
  * @author user
  */
 public class PatientRegistr {
+    public static void open(String polis)
+    {
+        Admin_RegForm ar=new Admin_RegForm();ar.setPolis(polis);  ar.setVisible(true);
+    }
     public static void setRegistr(Admin_RegForm regForm,String surname,String name,String secondname,boolean gender,String birthDay,String polis,String adress,String phone)
     {
       
