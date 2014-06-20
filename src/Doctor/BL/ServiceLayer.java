@@ -8,6 +8,7 @@ package Doctor.BL;
 import Doctor.*;
 import Doctor.BD.PatientMaper;
 import Doctor.BD.ResultMapper;
+import Doctor.GOF.ConcreteStrategyFioNameSec;
 import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -32,30 +33,34 @@ public class ServiceLayer {
        }else{
        df= new Doctor_fix();
        df.setVisible(true);
-       df.putLable(patient.getName()+"  "+patient.getSecondName()+"  "+patient.getSurname());
+       
+       Doctor.GOF.Context context= new Doctor.GOF.Context();
+       context.setStrategy(new ConcreteStrategyFioNameSec());
+       String name=patient.getName();
+       String second =patient.getSecondName();
+       String surnam =patient.getSurname();
+       String str = context.executeStrategy(name,second,surnam);
+       df.putLable(str);
        return true;
        }
     }
     public static void fix (){
+       if (FixResultOsmotr.fixation())
+       {
        dff= new Doctor_FixForm();
        dff.setVisible(true);
+       }
     }
     public static void putResult(String galoba, String recomm)
     {
         if (!galoba.isEmpty()&&!recomm.isEmpty()){
-        Visit visit = new Visit(); 
-        visit.setPolis(patient.getPolis());
-        visit.setGaloba(galoba);
-        visit.setRecomm(recomm);
-        Date date= new Date();
-        visit.setDate(date);
-        if(ResultMapper.putResult(visit))
-        {
-            dff.setVisible(false);           
-            df.setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(new JFrame(), "Ошибка","Ошибка", JOptionPane.ERROR_MESSAGE);
-        }
+    if(FixResultOsmotr.putResult( galoba,  recomm,  patient))
+    {
+         dff.setVisible(false);           
+         df.setVisible(true);
+    }else 
+    {            JOptionPane.showMessageDialog(new JFrame(), "Ошибка","Ошибка", JOptionPane.ERROR_MESSAGE);
+    }
         }
     else {
             JOptionPane.showMessageDialog(new JFrame(), "Вы не заполнили все поля","Ошибка.", JOptionPane.ERROR_MESSAGE);

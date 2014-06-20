@@ -26,7 +26,7 @@ public class DataBase {
             System.err.println("Error of DB Driver" );
         }
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/med", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/med", "root", "1234");
         }catch (SQLException e) {
             System.err.println("Error DB connect" );
         } 

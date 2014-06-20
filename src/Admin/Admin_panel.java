@@ -1,5 +1,6 @@
 package Admin;
 
+import Admin.GOF.Admin_search;
 import java.awt.Graphics;
 import java.awt.JobAttributes;
 import java.awt.PrintJob;
